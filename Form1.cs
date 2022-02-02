@@ -37,9 +37,7 @@ namespace Juego_de_Memoria
                     iconLabel.Text = iconos[numeroRandom];
                     iconos.RemoveAt(numeroRandom);
                 }
-
             }
-
         }
 
 
