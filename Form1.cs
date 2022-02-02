@@ -37,6 +37,7 @@ namespace Juego_de_Memoria
                     iconLabel.Text = iconos[numeroRandom];
                     iconos.RemoveAt(numeroRandom);
                 }
+                iconLabel.ForeColor = iconLabel.BackColor; //Ocultando los iconos al usuario
             }
         }
 
@@ -49,6 +50,130 @@ namespace Juego_de_Memoria
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            primerClick.ForeColor = primerClick.BackColor; //Color del fondo click 1
+            segundoClick.ForeColor = segundoClick.BackColor; //Color del fondo click 2
+            primerClick = null; //Retorna null al primer click
+            segundoClick = null; //Retorna null al segundo click
+
+
+        }
+
+        private void VerificarGana()
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            if (timer1.Enabled == true)
+                return;
+            Label clickedLabel = sender as Label; //Para registrar si el label ha sido seleccionado
+
+            //Si este label en concreto ha sido selecciona significa que no esta nullo
+            if(clickedLabel != null)
+            {
+                if (clickedLabel.ForeColor == Color.Black)
+                    return;
+                VerificarGana();
+                if(primerClick == null) //Para determinar si no ha habido un click antes
+                {
+                    primerClick = clickedLabel; //Se convierte en el primer elemento clickeado
+                    primerClick.ForeColor = Color.Black;//al hacer click cambia el color del label a negro
+                    return;
+                }
+                else
+                {
+                    //Si hay algo en el primer click será entonces el segundo
+                    segundoClick = clickedLabel;
+                    segundoClick.ForeColor = Color.Black;
+                    if(primerClick.Text == segundoClick.Text)//Si el elemento clickeado es el segundo
+                    {
+                        primerClick = null;
+                        segundoClick = null;
+                        return;
+                    }
+                    timer1.Start();
+                }
+
+            }
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            if (timer1.Enabled == true)
+                return;
+            Label clickedLabel = sender as Label; //Para registrar si el label ha sido seleccionado
+
+            //Si este label en concreto ha sido selecciona significa que no esta nullo
+            if (clickedLabel != null)
+            {
+                if (clickedLabel.ForeColor == Color.Black)
+                    return;
+                VerificarGana();
+                if (primerClick == null) //Para determinar si no ha habido un click antes
+                {
+                    primerClick = clickedLabel; //Se convierte en el primer elemento clickeado
+                    primerClick.ForeColor = Color.Black;//al hacer click cambia el color del label a negro
+                    return;
+                }
+                else
+                {
+                    //Si hay algo en el primer click será entonces el segundo
+                    segundoClick = clickedLabel;
+                    segundoClick.ForeColor = Color.Black;
+                    if (primerClick.Text == segundoClick.Text)//Si el elemento clickeado es el segundo
+                    {
+                        primerClick = null;
+                        segundoClick = null;
+                        return;
+                    }
+                    timer1.Start();
+                }
+
+            }
+        }
+
+        //Programación cuadro 3
+        private void label3_Click(object sender, EventArgs e)
+        {
+            if (timer1.Enabled == true)
+                return;
+            Label clickedLabel = sender as Label; //Para registrar si el label ha sido seleccionado
+
+            //Si este label en concreto ha sido selecciona significa que no esta nullo
+            if (clickedLabel != null)
+            {
+                if (clickedLabel.ForeColor == Color.Black)
+                    return;
+                VerificarGana();
+                if (primerClick == null) //Para determinar si no ha habido un click antes
+                {
+                    primerClick = clickedLabel; //Se convierte en el primer elemento clickeado
+                    primerClick.ForeColor = Color.Black;//al hacer click cambia el color del label a negro
+                    return;
+                }
+                else
+                {
+                    //Si hay algo en el primer click será entonces el segundo
+                    segundoClick = clickedLabel;
+                    segundoClick.ForeColor = Color.Black;
+                    if (primerClick.Text == segundoClick.Text)//Si el elemento clickeado es el segundo
+                    {
+                        primerClick = null;
+                        segundoClick = null;
+                        return;
+                    }
+                    timer1.Start();
+                }
+
+            }
 
         }
     }

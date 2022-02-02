@@ -29,6 +29,7 @@ namespace Juego_de_Memoria
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@ namespace Juego_de_Memoria
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,6 +97,7 @@ namespace Juego_de_Memoria
             this.label1.TabIndex = 0;
             this.label1.Text = "c";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -105,6 +108,7 @@ namespace Juego_de_Memoria
             this.label2.TabIndex = 1;
             this.label2.Text = "c";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -115,6 +119,7 @@ namespace Juego_de_Memoria
             this.label3.TabIndex = 2;
             this.label3.Text = "c";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -246,15 +251,21 @@ namespace Juego_de_Memoria
             this.label16.Text = "c";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 750;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 511);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Juego de Memoria";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -280,6 +291,7 @@ namespace Juego_de_Memoria
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
