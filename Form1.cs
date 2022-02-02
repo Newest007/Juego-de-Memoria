@@ -17,11 +17,10 @@ namespace Juego_de_Memoria
                                       //elementos tipo string de manera que seán los valores predeterminados a mezclar
         List<string> iconos = new List<string>()
         {
-            "!","!","N","N",",",",","k","k","b","b","v","v","w","w","z","z"
+            "p","p","N","N","t","t","o","o","Z","Z","ó","ó","d","d","j","j"
         };
 
-        bool prueba = false;
-        int probaishon = 0;
+        int prueba = 0;
 
         Label primerClick = null;
         Label segundoClick = null;
@@ -40,7 +39,7 @@ namespace Juego_de_Memoria
                     iconLabel.Text = iconos[numeroRandom];
                     iconos.RemoveAt(numeroRandom);
                 }
-                iconLabel.ForeColor = iconLabel.BackColor; //Ocultando los iconos al usuario
+                //iconLabel.ForeColor = iconLabel.BackColor; //Ocultando los iconos al usuario
             }
         }
 
@@ -63,16 +62,30 @@ namespace Juego_de_Memoria
             segundoClick.ForeColor = segundoClick.BackColor; //Color del fondo click 2
             primerClick = null; //Retorna null al primer click
             segundoClick = null; //Retorna null al segundo click
-
-
+            
         }
 
         private void VerificarGana()
         {
-
-            if(probaishon == 16)
+            /*
+            if(label1.ForeColor == Color.Black && label2.ForeColor == Color.Black && label3.ForeColor == Color.Black && label4.ForeColor == Color.Black &&
+                label5.ForeColor == Color.Black &&  label6.ForeColor == Color.Black && label7.ForeColor == Color.Black && label8.ForeColor == Color.Black &&
+                label9.ForeColor == Color.Black && label10.ForeColor == Color.Black && label11.ForeColor == Color.Black && label12.ForeColor == Color.Black &&
+                label13.ForeColor == Color.Black && label14.ForeColor == Color.Black && label15.ForeColor == Color.Black && label16.ForeColor == Color.Black)
             {
-                MessageBox.Show("Felicidades has ganado!");
+                MessageBox.Show("FELICIDADES HAS GANADO!!");
+
+            }
+            */
+
+
+        }
+
+        private void MensajeGanador()
+        {
+            if (prueba == 8)
+            {
+                MessageBox.Show("FELICIDADES HAS GANADO!!!","Enhorabuena",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
 
         }
@@ -93,7 +106,6 @@ namespace Juego_de_Memoria
                 {
                     primerClick = clickedLabel; //Se convierte en el primer elemento clickeado
                     primerClick.ForeColor = Color.Black;//al hacer click cambia el color del label a negro
-                    probaishon += 1;
                     return;
                 }
                 else
@@ -105,15 +117,18 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
-                        probaishon += 1;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
+                        
                     }
                     
                     timer1.Start();
                 }
-
             }
-
+            MensajeGanador();
         }
         //Programación cuadro 2
         private void label2_Click(object sender, EventArgs e)
@@ -132,7 +147,6 @@ namespace Juego_de_Memoria
                 {
                     primerClick = clickedLabel; //Se convierte en el primer elemento clickeado
                     primerClick.ForeColor = Color.Black;//al hacer click cambia el color del label a negro
-                    probaishon += 1;
                     return;
                 }
                 else
@@ -144,7 +158,10 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
-                        probaishon += 1;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
                     }
                     timer1.Start();
@@ -152,7 +169,6 @@ namespace Juego_de_Memoria
 
             }
         }
-
         //Programación cuadro 3
         private void label3_Click(object sender, EventArgs e)
         {
@@ -170,7 +186,6 @@ namespace Juego_de_Memoria
                 {
                     primerClick = clickedLabel; //Se convierte en el primer elemento clickeado
                     primerClick.ForeColor = Color.Black;//al hacer click cambia el color del label a negro
-                    probaishon += 1;
                     return;
                 }
                 else
@@ -182,7 +197,10 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
-                        probaishon += 1;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
                     }
                     timer1.Start();
@@ -219,8 +237,13 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
                     }
+                    
                     timer1.Start();
                 }
 
@@ -254,6 +277,10 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
                     }
                     timer1.Start();
@@ -288,6 +315,10 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
                     }
                     timer1.Start();
@@ -322,6 +353,10 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
                     }
                     timer1.Start();
@@ -356,6 +391,10 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
                     }
                     timer1.Start();
@@ -390,6 +429,10 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
                     }
                     timer1.Start();
@@ -424,6 +467,10 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
                     }
                     timer1.Start();
@@ -458,6 +505,10 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
                     }
                     timer1.Start();
@@ -492,6 +543,10 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
                     }
                     timer1.Start();
@@ -526,6 +581,10 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
                     }
                     timer1.Start();
@@ -560,6 +619,10 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
                     }
                     timer1.Start();
@@ -594,6 +657,10 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
                     }
                     timer1.Start();
@@ -628,6 +695,10 @@ namespace Juego_de_Memoria
                     {
                         primerClick = null;
                         segundoClick = null;
+                        prueba += 1;
+
+                        MensajeGanador();
+
                         return;
                     }
                     timer1.Start();
